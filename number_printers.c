@@ -9,7 +9,7 @@ int print_integer(va_list ap)
 {
 	int n = va_arg(ap, int);
 	int num, last_digit = n % 10, current_digit, exp = 1;
-	int  printed_digits = 0;
+	int  printed_digits = 1;
 
 	n = n / 10;
 	num = n;
