@@ -12,10 +12,7 @@ int _printf(const char *format, ...)
 	int (*p)(va_list);
 
 	if (format == NULL)
-	{
-		_puts("(nil)\n");
-		exit(100);
-	}
+		return (0);
 
 	va_start(args, format);
 	while (format[i] != '\0')

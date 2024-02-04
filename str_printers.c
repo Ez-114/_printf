@@ -51,10 +51,7 @@ int print_str(va_list ap)
 	char *str = va_arg(ap, char *);
 
 	if (str == NULL)
-	{
-		_puts("(nil)\n");
-		exit(101);
-	}
+		return (_puts("(null)"));
 	return (_puts(str));
 }
 
