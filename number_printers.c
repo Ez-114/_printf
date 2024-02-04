@@ -52,14 +52,18 @@ int print_integer(va_list ap)
 int print_binary(va_list ap)
 {
 	unsigned int number = va_arg(ap, unsigned int);
-	char *buffer = malloc(32);
+	char *buffer;
 	int i, j;
+
+	buffer = malloc(32);
+	if (!buffer)
+		exit(32);
 
 	if (number == 0)
 	{
 		_putchar('0');
 		return (1);
-    }
+	}
 
 	/* init buffer to 0 */
 	for (i = 0; i < 32; i++)
