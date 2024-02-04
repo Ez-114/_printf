@@ -20,6 +20,7 @@ typedef struct fmt_specifier
 int _putchar(char);
 int _puts(char *);
 int print_char(va_list);
+int print_percent(va_list);
 int print_str(va_list);
 int (*get_specifier(char))(va_list);
 int _printf(const char *format, ...);

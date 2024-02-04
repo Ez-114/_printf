@@ -42,7 +42,7 @@ int print_char(va_list ap)
 }
 
 /**
- * print_str - printf passed str by _printf to stdout
+ * print_str - print passed str by _printf to stdout
  * @ap: va_list macro contains next char *
  * Return: (number of printed characters) Success, (-1) if str is NULL
 */
@@ -56,4 +56,16 @@ int print_str(va_list ap)
 		exit(101);
 	}
 	return (_puts(str));
+}
+
+/**
+ * print_percent - print passed '%' charcter by _printf to stdout
+ * @ap: va_list macro
+ * Return: (1) Success, (0) otherwise
+*/
+int print_percent(va_list ap)
+{
+	(void)ap;
+
+	return (_putchar('%'));
 }

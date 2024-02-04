@@ -11,6 +11,7 @@ int (*get_specifier(char ch))(va_list)
     fmter specifiers[] = {
         {"c", print_char},
         {"s", print_str},
+        {"%", print_percent},
         {NULL, NULL}
     };
     int i = 0;
