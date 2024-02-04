@@ -43,3 +43,40 @@ int print_integer(va_list ap)
 
 	return (printed_digits);
 }
+
+/**
+ * print_binary - prints given number to binary
+ * @ap: va_list macro passed from _printf
+ * Return: total printed binaries
+*/
+int print_binary(va_list ap)
+{
+	unsigned int number = va_arg(ap, unsigned int);
+	char *buffer = malloc(32);
+	int i, j;
+
+	if (number == 0)
+	{
+		_putchar('0');
+		return (1);
+    }
+
+	/* init buffer to 0 */
+	for (i = 0; i < 32; i++)
+		buffer[i] = '0';
+
+	for (i = 0; number > 0; i++)
+	{
+		buffer[i] = number % 2;
+		number /= 2;
+	}
+
+	/* print in reverse order to show binary number */
+	for (j = i - 1; j >= 0; j--)
+	{
+		_putchar(buffer[j] + '0');
+	}
+
+	free(buffer);
+	return (i);
+}
