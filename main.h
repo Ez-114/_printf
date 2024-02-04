@@ -22,6 +22,7 @@ int _puts(char *);
 int print_char(va_list);
 int print_percent(va_list);
 int print_str(va_list);
+int print_letter(char);
 int (*get_specifier(char))(va_list);
 int _printf(const char *format, ...);
 

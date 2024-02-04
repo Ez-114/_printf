@@ -11,8 +11,10 @@ int _printf(const char *format, ...)
 	va_list args;
 	int (*p)(va_list);
 
-	if (format == NULL)
-		return (0);
+	if (format == NULL || (format[0] == '%' && !format[1]))
+		exit(100);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		exit(101);
 
 	va_start(args, format);
 	while (format[i] != '\0')
@@ -22,7 +24,10 @@ int _printf(const char *format, ...)
 			/* specifier part */
 			i++; /* go to what ever after '%' */
 			p = get_specifier(format[i]);
-			total_printed += p(args);
+			if (!p)
+				total_printed += print_letter(format[i]);
+			else
+				total_printed += p(args);
 		}
 		else
 		{
