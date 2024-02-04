@@ -38,6 +38,11 @@ int print_percent(va_list ap)
 	return (_putchar('%'));
 }
 
+/**
+ * print_letter - print '%' followed by passed letter to stdout
+ * @ch: passed letter
+ * Return: (1) Success
+*/
 int print_letter(char ch)
 {
 	_putchar('%');
