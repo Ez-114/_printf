@@ -12,6 +12,8 @@ int (*get_specifier(char ch))(va_list)
 		{"c", print_char},
 		{"s", print_str},
 		{"%", print_percent},
+		{"d", print_integer},
+		{"i", print_integer},
 		{NULL, NULL}
 	};
 	int i = 0;
